@@ -71,8 +71,8 @@ COPY --from=builder /build/packages/core/node_modules ./packages/core/node_modul
 COPY --from=builder /build/packages/server/node_modules ./packages/server/node_modules
 COPY --from=builder /build/packages/frontend/node_modules ./packages/frontend/node_modules
 
-HEALTHCHECK --interval=30s --timeout=5s --start-period=5s --retries=3 \
-  CMD curl -fsS http://localhost:${PORT:-3000}/api/v1/status || exit 1
+#HEALTHCHECK --interval=30s --timeout=5s --start-period=5s --retries=3 \
+ # CMD curl -fsS http://localhost:${PORT:-3000}/api/v1/status || exit 1
 
 EXPOSE ${PORT:-3000}
 
